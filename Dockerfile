@@ -12,7 +12,7 @@ RUN ./gradlew bootJar --no-daemon
 
 # Stage 2: Create the final image to deploy the app
 FROM openjdk:17-jdk-slim
-EXPOSE 5000
+EXPOSE 8080
 
 # Copy the JAR file from the build stage
 COPY --from=build /spring-server/build/libs/*.jar SpringServer.jar
